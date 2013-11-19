@@ -24,15 +24,33 @@ function ScoreCtrl($scope) {
 
     // Start with blank data.
     $scope.languageUsed = {name:'', score:0};
-    $scope.testCount = 0;
+    $scope.testCount = null;
+    $scope.langCount = null;
 
     $scope.calcUnitTestValue = function () {
+        var score = 0;
+        if ($scope.testCount === null) {
+            return score;
+        }
         return ($scope.testCount > 0) ? $scope.testCount * 10 : -10000 * generateScore();
+    };
+
+    $scope.calcLangCountValue = function () {
+        if ($scope.langCount === null) {
+            return 0;
+        }
+        if ($scope.languageUsed.name === 'javascript' && $scope.langCount === 1) {
+            // Probably node, big hit.
+            console.log('GOT A NODE BADASS HERE');
+            return generateScore() * -50;
+        }
+        return $scope.langCount * 50;
     };
 
     $scope.score = function () {
         var score = ($scope.languageUsed.score +
-                     $scope.calcUnitTestValue())
+                     $scope.calcUnitTestValue() +
+                     $scope.calcLangCountValue())
         return score;
     };
 

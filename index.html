@@ -13,7 +13,10 @@
             </select>
             <br>
             <label>How many unit tests do you have?</label>
-            <input type="text" ng-model="testCount">
+            <input type="text" ng-model="testCount" placeholder="You do test, right?">
+            <br>
+            <label>How many languages are in your project?</label>
+            <input type="number" ng-model="langCount" placeholder="Probably too many...">
             <div>
                 Your current score is {{score()}}.
             </div>
