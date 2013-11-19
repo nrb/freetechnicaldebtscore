@@ -24,8 +24,17 @@ function ScoreCtrl($scope) {
 
     // Start with blank data.
     $scope.languageUsed = {name:'', score:0};
+    $scope.testCount = 0;
 
-    $scope.score = 0;
+    $scope.calcUnitTestValue = function () {
+        return ($scope.testCount > 0) ? $scope.testCount * 10 : -10000 * generateScore();
+    };
+
+    $scope.score = function () {
+        var score = ($scope.languageUsed.score +
+                     $scope.calcUnitTestValue())
+        return score;
+    };
 
     $scope.checkLanguage = function () {
         return $scope.score += $scope.languageUsed.score;

@@ -8,13 +8,14 @@
     <body>
         Get your free technical debt score!
         <div ng-controller="ScoreCtrl">
-            <form ng-submit="checkLanguage()">
-                <label>What language is your project written in?</label>
-                <select ng-model="languageUsed" ng-options="l.name for l in languages">
-                </select>
-            </form>
+            <label>What language is your project written in?</label>
+            <select ng-model="languageUsed" ng-options="l.name for l in languages">
+            </select>
+            <br>
+            <label>How many unit tests do you have?</label>
+            <input type="text" ng-model="testCount">
             <div>
-                Your current score is {{languageUsed.score}}.
+                Your current score is {{score()}}.
             </div>
         </div>
     </body>
