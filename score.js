@@ -32,7 +32,7 @@ function ScoreCtrl($scope) {
         if ($scope.testCount === null) {
             return score;
         }
-        return ($scope.testCount > 0) ? $scope.testCount * 10 : -10000 * generateScore();
+        return ($scope.testCount > 0) ? $scope.testCount * 10 : 10000 * generateScore();
     };
 
     $scope.calcLangCountValue = function () {
@@ -42,7 +42,7 @@ function ScoreCtrl($scope) {
         if ($scope.languageUsed.name === 'javascript' && $scope.langCount === 1) {
             // Probably node, big hit.
             console.log('GOT A NODE BADASS HERE');
-            return generateScore() * -50;
+            return generateScore() * 50;
         }
         return $scope.langCount * 50;
     };
