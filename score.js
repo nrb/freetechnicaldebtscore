@@ -5,21 +5,21 @@ generateScore = function () {
 function ScoreCtrl($scope) {
 
     $scope.languages = [
-        {name: 'php', score: generateScore()},
-        {name: 'python', score: generateScore()},
-        {name: 'ruby', score: generateScore()},
-        {name: 'erlang', score: generateScore()},
-        {name: 'javascript', score: generateScore()},
-        {name: 'clojure', score: generateScore()},
-        {name: 'haskell', score: generateScore()},
-        {name: 'scala', score: generateScore()},
-        {name: 'java', score: generateScore()},
-        {name: 'cobol', score: generateScore()},
-        {name: 'c', score: generateScore()},
-        {name: 'objective-c', score: generateScore()},
-        {name: 'c++', score: generateScore()},
-        {name: 'go', score: generateScore()},
-        {name: 'perl', score: generateScore()}
+        {name: 'PHP', score: generateScore()},
+        {name: 'Python', score: generateScore()},
+        {name: 'Ruby', score: generateScore()},
+        {name: 'Erlang', score: generateScore()},
+        {name: 'JavaScript', score: generateScore()},
+        {name: 'Clojure', score: generateScore()},
+        {name: 'Haskell', score: generateScore()},
+        {name: 'Scala', score: generateScore()},
+        {name: 'Java', score: generateScore()},
+        {name: 'COBOL', score: generateScore()},
+        {name: 'C', score: generateScore()},
+        {name: 'Objective-C', score: generateScore()},
+        {name: 'C++', score: generateScore()},
+        {name: 'Go', score: generateScore()},
+        {name: 'Perl', score: generateScore()}
     ];
 
     // Start with blank data.
@@ -39,7 +39,7 @@ function ScoreCtrl($scope) {
         if ($scope.langCount === null) {
             return 0;
         }
-        if ($scope.languageUsed.name === 'javascript' && $scope.langCount === 1) {
+        if ($scope.languageUsed.name === 'JavaScript' && $scope.langCount === 1) {
             // Probably node, big hit.
             console.log('GOT A NODE BADASS HERE');
             return generateScore() * 50;
