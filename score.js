@@ -21,7 +21,8 @@ function ScoreCtrl($scope) {
         {name: 'Go', score: generateScore()},
         {name: 'Perl', score: generateScore()},
         {name: 'FORTRAN', score: generateScore()},
-        {name: 'Lisp', score: generateScore()}
+        {name: 'Lisp', score: generateScore()},
+        {name: 'Rust', score: generateScore()}
     ];
 
     // Start with blank data.
